@@ -1,0 +1,16 @@
+<odoo>
+    <data noupdate="0">
+        <!-- Define HR User Group -->
+        <record id="group_hr_user_ext" model="res.groups">
+            <field name="name">HR User</field>
+            <field name="users" eval="[(4,ref('base.user_admin'))]"/>
+        </record>
+
+        <!-- Define HR Manager Group -->
+        <record id="group_hr_manager_ext" model="res.groups">
+            <field name="name">HR Manager</field>
+            <field name="implied_ids" eval="[(4, ref('group_hr_user_ext'))]"/>
+        </record>
+        
+    </data>
+</odoo>

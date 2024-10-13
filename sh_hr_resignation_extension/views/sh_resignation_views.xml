@@ -1,0 +1,35 @@
+<odoo>
+    <record id="view_sh_hr_resignation_form_inherit" model="ir.ui.view">
+        <field name="name">sh.hr.resignation.form.inherit</field>
+        <field name="model">sh.hr.resignation</field>
+        <field name="inherit_id" ref="sh_all_in_one_hrms.sh_resignation_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state'][@widget='statusbar']" position="attributes">
+                <attribute name="statusbar_visible">new,waiting,approve,refused,closed,countdown</attribute>
+                <attribute name="clickable">1</attribute>
+                <attribute name="readonly">0</attribute>
+            </xpath>
+            
+            <xpath expr="//field[@name='approved_comment']" position="after">
+                <field name="remaining_working_days" readonly="1"/>
+            </xpath>
+
+            <xpath expr="//field[@name='description']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='description']" position="after">
+                <field name="attachment" widget="binary" required="1"/>
+            </xpath>
+
+            <xpath expr="//field[@name='first_contract_end_date']" position="after">
+                <field name="hr_responsible_ids" readonly="1" widget="many2many_tags"/>
+            </xpath>
+
+            <xpath expr="//field[@name='sh_contract_id']" position="after">
+                <field name="notice_period_id" />
+            </xpath>
+            
+        </field>
+    </record>
+    
+</odoo>

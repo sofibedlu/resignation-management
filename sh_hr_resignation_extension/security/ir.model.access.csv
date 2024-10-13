@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_notice_period_config_user,access_notice_period_config_user,model_notice_period_config,sh_hr_resignation_extension.group_hr_user_ext,1,0,0,0
+access_notice_period_config_manager,access_notice_period_config_manager,model_notice_period_config,sh_hr_resignation_extension.group_hr_manager_ext,1,1,1,1

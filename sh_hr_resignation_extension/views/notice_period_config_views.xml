@@ -1,0 +1,41 @@
+<odoo>
+
+     <record id="action_notice_period_config" model="ir.actions.act_window">
+        <field name="name">Notice Period Configuration</field>
+        <field name="res_model">notice.period.config</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record id="view_notice_period_config_form" model="ir.ui.view">
+        <field name="name">notice.period.config.form</field>
+        <field name="model">notice.period.config</field>
+        <field name="arch" type="xml">
+            <form string="Notice Period Configuration">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="notice_days"/>
+                        <field name="warning_days"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_notice_period_config_tree" model="ir.ui.view">
+        <field name="name">notice.period.config.tree</field>
+        <field name="model">notice.period.config</field>
+        <field name="arch" type="xml">
+            <tree string="Notice Period Configuration">
+                <field name="name"/>
+                <field name="notice_days"/>
+                <field name="warning_days"/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem id="menu_notice_period_config" name="Notice Period Configuration"
+              parent="sh_all_in_one_hrms.sh_resignation_main_menu"
+              action="action_notice_period_config"/>
+
+</odoo>
